@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  max-width: 100vw;
+}
+
+:root {
+  --textColor: #252525;
+  --textColorDark: #e2e2e2;
+  --linkColor: #454545;
+  --accentColor1: #3f48cc;
+  --accentColor2: #fff200;
+  --accentColor3: #22b14c;
+  --accentColorText1: #ffffff;
+  --fullscreen-minus-nav: calc(100vh - 75px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--textColor);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 1.5em;
+  min-height: 100vh;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: rgb(2, 0, 36);
+  /* background: linear-gradient(
+    135deg,
+    rgb(211, 211, 255) 0%,
+    rgb(212, 246, 253) 99%
+  ); */
+  /* background: linear-gradient(
+    135deg,
+    rgb(0, 202, 202) 0%,
+    rgb(255, 175, 1) 99%
+  ); */
+  background: #b737c3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #2d378d,
+    #b737c3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #2d378d,
+    #b737c3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  overflow-x: hidden;
+}
+
+a {
+  background: linear-gradient(
+    to bottom,
+    var(--accentColor1) 0%,
+    var(--accentColor1) 100%
+  );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  color: #454545;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  background-size: 5px 2.5rem;
+  color: var(--accentColorText1);
+}
+
+nav.nav-top {
+  /* border: 1px solid black; */
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+/* div.nav-logo {
+  width: 100%;
+} */
+
+div.nav-logo img {
+  height: 70px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  width: 100vw;
+  padding: 0px;
+  /* background: pink; For testing purposes. I digress */
+  margin: 0px;
+  min-height: var(--fullscreen-minus-nav);
+}
+
+header {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.788);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+div.expandedcontent {
+  display: none;
+  opacity: 0;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.788);
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+span#expand-nav {
+  cursor: pointer;
+  color: var(--accentColor1);
+}
+
+.sidenav {
+  height: 0px;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 76px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.788);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 0px;
+  backdrop-filter: blur(10px);
+  overflow-y: hidden;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--linkColor);
+  display: block;
+  transition: all 0.3s ease-in-out;
+  background: none;
+}
+
+.sidenav a:hover,
+.sidenav a:focus {
+  text-decoration: underline var(--accentColor1) 4px;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+#contr-nav {
+  display: none;
+  cursor: pointer;
+  color: var(--accentColor1);
+}
+
+#expand-nav,
+#contr-nav {
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px 5px 5px 5px;
+  background-size: 4px 0;
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+}
+
+#expand-nav:hover,
+#expand-nav:focus,
+#contr-nav:hover,
+#contr-nav:focus {
+  color: #ffffff;
+  background-color: var(--accentColor1);
+  background-color: #3f48ccd0;
+  background-size: 4px 2.5rem;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-section {
+  height: var(--fullscreen-minus-nav);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  /* background: yellow; For testing purposes. I digress */
+}
+
+.hero-heading {
+  color: #ffffff;
+  font-size: 72px;
+  width: 60vw;
+  max-width: 460px;
+  /* border: 1px solid black; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* border-left: 15px solid var(--accentColor1); */
+  /* padding-left: 30px; */
+  /* border-image: linear-gradient(150deg, #00fc4c, #8f96ff, #fff200) 1 100%; */
+  user-select: none;
+}
+
+.gradient-text {
+  color: white;
+  background: linear-gradient(
+    20deg,
+    rgb(178, 95, 255) 10%,
+    rgb(0, 213, 255) 50%,
+    rgb(0, 0, 0) 50%
+  );
+  background-clip: border-box;
+  border-radius: 5px;
+}
+
+.name,
+.designation {
+  font-size: 1rem;
+  color: white;
+}
+
+.material-icons.scroll-indicator {
+  color: white;
+  font-size: 56px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  animation: scroll-indicator 1s infinite;
+  cursor: pointer;
+}
+
+@keyframes scroll-indicator {
+  0% {
+    opacity: 0;
+    bottom: 30px;
+  }
+  50% {
+    opacity: 1;
+    bottom: 15px;
+  }
+  100% {
+    opacity: 0;
+    bottom: 0px;
+  }
+}
+
+section.second-section {
+  color: var(--textColorDark);
+}
+
+h2.project-heading {
+  text-align: center;
+  color: white;
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+  color: var(--textColor);
+  padding: 20px;
+  width: 300px;
+  height: 550px;
+  font-size: 1rem;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 10px;
+}
+
+.card a {
+  margin: 10px;
+}
